@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GV Agency</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f5f6fa;
+      color:#0b1f4d;
+    }
+
+    nav{
+      background:#021b49;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 50px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:700;
+      color:#ffbf00;
+      line-height:1;
+    }
+
+    .logo span{
+      display:block;
+      font-size:16px;
+      color:white;
+      letter-spacing:1px;
+    }
+
+    .menu{
+      display:flex;
+      gap:30px;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .menu a:hover{
+      color:#ffbf00;
+    }
+
+    .phone{
+      font-weight:500;
+      color:#ffbf00;
+    }
+
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:70px 50px;
+      background:linear-gradient(90deg,#eef3ff,#ffffff);
+      min-height:520px;
+      gap:40px;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h4{
+      color:#f0a500;
+      margin-bottom:12px;
+      letter-spacing:1px;
+    }
+
+    .hero-text h1{
+      font-size:64px;
+      line-height:1.1;
+      margin-bottom:20px;
+      color:#021b49;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      color:#444;
+      line-height:1.8;
+      margin-bottom:30px;
+      max-width:560px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#ffbf00;
+      color:#021b49;
+      padding:15px 34px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(0,0,0,.15);
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:620px;
+      border-radius:24px;
+      box-shadow:0 20px 40px rgba(0,0,0,.12);
+    }
+
+    .section{
+      padding:70px 50px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:36px;
+      margin-bottom:50px;
+      color:#021b49;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:white;
+      border-radius:18px;
+      padding:28px 20px;
+      text-align:center;
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card img{
+      width:90px;
+      height:90px;
+      object-fit:contain;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      font-size:20px;
+      color:#021b49;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#555;
+      line-height:1.6;
+    }
+
+    .features{
+      background:#021b49;
+      color:white;
+      padding:45px 30px;
+      border-radius:22px;
+      margin:0 50px 70px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+    }
+
+    .feature h4{
+      color:#ffbf00;
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .feature p{
+      color:#d6def8;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .contact-box{
+      max-width:850px;
+      margin:auto;
+      background:white;
+      padding:35px;
+      border-radius:18px;
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+      line-height:2;
+    }
+
+    .contact-box a{
+      color:#0d47a1;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    footer{
+      background:#021b49;
+      color:#c9d5ff;
+      text-align:center;
+      padding:22px;
+      margin-top:20px;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+      nav{
+        flex-direction:column;
+        gap:15px;
+        padding:18px 20px;
+      }
+
+      .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:50px 20px;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero-text p{
+        margin:auto;
+        margin-bottom:25px;
+      }
+
+      .section{
+        padding:50px 20px;
+      }
+
+      .features{
+        margin:0 20px 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">GV ⚡<span>AGENCY</span></div>
+
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+
+    <div class="phone">📞 +91 70108 37245</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h4>WELCOME TO</h4>
+      <h1>GV AGENCY</h1>
+
+      <p>
+        Trusted agency for electrical solutions, supply services, project support,
+        maintenance services and customer assistance with quality and reliability.
+      </p>
+
+      <a href="#contact" class="btn">CONTACT US →</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="GV Agency">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <h2 class="section-title">OUR SERVICES</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048941.png" alt="Supply">
+        <h3>Electrical Supply</h3>
+        <p>Quality electrical materials and accessories for homes and businesses.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Installation">
+        <h3>Installation</h3>
+        <p>Professional installation support for electrical systems and equipment.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2970/2970785.png" alt="Maintenance">
+        <h3>Maintenance</h3>
+        <p>Regular maintenance services for safety and long-term performance.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="Projects">
+        <h3>Project Support</h3>
+        <p>Reliable support for residential, commercial and industrial projects.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="about">
+
+    <div class="feature">
+      <h4>✔ Trusted Service</h4>
+      <p>Reliable service and genuine products for every customer.</p>
+    </div>
+
+    <div class="feature">
+      <h4>💰 Competitive Pricing</h4>
+      <p>Affordable pricing with transparent quotations and support.</p>
+    </div>
+
+    <div class="feature">
+      <h4>🚚 Fast Response</h4>
+      <p>Quick response and timely service execution across all projects.</p>
+    </div>
+
+    <div class="feature">
+      <h4>📞 Customer Support</h4>
+      <p>Dedicated support team available for assistance and enquiries.</p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" style="background:#eef3ff;">
+    <h2 class="section-title">CONTACT US</h2>
+
+    <div class="contact-box">
+
+      <h3 style="color:#021b49;margin-bottom:15px;">GV Agency</h3>
+
+      <p>
+        <strong>Address:</strong><br>
+        Main Rd, Gobichettipalayam - Kallipatti Rd,<br>
+        Kallipatti, Tamil Nadu - 638505
+      </p>
+
+      <p>
+        <strong>Phone:</strong><br>
+        <a href="tel:+917010837245">+91 70108 37245</a>
+      </p>
+
+      <p>
+        <strong>Location:</strong><br>
+        Kallipatti, Gobichettipalayam, Tamil Nadu
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 GV Agency | Main Rd, Gobichettipalayam - Kallipatti Rd, Kallipatti, Tamil Nadu - 638505 | 📞 +91 70108 37245
+  </footer>
+
+</body>
+</html>
