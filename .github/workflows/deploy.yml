@@ -10,9 +10,9 @@ jobs:
       - name: Pull Latest Code
         run: |
           cd /home/ubuntu/gv-agency
-          git pull origin master
+          git pull origin main
 
       - name: Deploy static site
         run: |
           # Example: copy files to your web server directory (e.g. nginx)
-          sudo cp -r /home/ubuntu/github-action-ci-cd/* /var/www/html/
+          sudo cp -r /home/ubuntu/gv-agency/* /var/www/html/
