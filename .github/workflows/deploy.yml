@@ -1,7 +1,7 @@
 name: gv agency
 on:
   pull_request: 
-    branches: [master]
+    branches: [main]
 
 jobs:
   deploy:
