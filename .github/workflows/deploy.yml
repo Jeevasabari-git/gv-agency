@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Pull Latest Code
         run: |
-          cd /home/ubuntu/github-action-ci-cd
+          cd /home/ubuntu/gv-agency
           git pull origin master
 
       - name: Deploy static site
