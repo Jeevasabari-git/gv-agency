@@ -1,6 +1,6 @@
 name: gv agency
 on:
-  pull_request: 
+  push: 
     branches: [main]
 
 jobs:
